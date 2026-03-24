@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nos vamos a Río 🇧🇷 · 29 mar – 3 abr 2026</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --teal: #0EA5E9;
+      --teal-dark: #0284C7;
+      --teal-light: #E0F2FE;
+      --coral: #F97316;
+      --coral-light: #FFF7ED;
+      --navy: #0F172A;
+      --slate: #64748B;
+      --bg: #F1F5F9;
+      --white: #FFFFFF;
+      --border: #E2E8F0;
+      --shadow: 0 1px 3px rgba(0,0,0,0.06), 0 4px 16px rgba(0,0,0,0.06);
+      --shadow-lg: 0 8px 32px rgba(0,0,0,0.12);
+      --radius: 20px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg);
+      color: var(--navy);
+      line-height: 1.6;
+    }
+
+    /* ─── HERO ─────────────────────────────────── */
+    .hero {
+      background: linear-gradient(145deg, #0F2B5B 0%, #1251A3 45%, #0EA5E9 100%);
+      padding: 72px 24px 140px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse 60% 50% at 20% 80%, rgba(14,165,233,0.25) 0%, transparent 60%),
+        radial-gradient(ellipse 50% 40% at 80% 20%, rgba(255,255,255,0.07) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .hero-inner { position: relative; z-index: 1; }
+
+    .hero-flag { font-size: 56px; display: block; margin-bottom: 20px; animation: float 3s ease-in-out infinite; }
+    @keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-8px)} }
+
+    .hero h1 {
+      font-size: clamp(40px, 9vw, 80px);
+      font-weight: 900;
+      color: #fff;
+      letter-spacing: -2.5px;
+      line-height: 1.05;
+      margin-bottom: 14px;
+    }
+    .hero h1 em {
+      font-style: normal;
+      background: linear-gradient(90deg, #FDE047, #FB923C);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero-dates {
+      display: inline-block;
+      font-size: 16px;
+      font-weight: 600;
+      color: rgba(255,255,255,0.75);
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 100px;
+      padding: 6px 20px;
+      margin-bottom: 36px;
+      letter-spacing: 0.3px;
+    }
+
+    .travelers {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 44px;
+    }
+    .traveler-chip {
+      background: rgba(255,255,255,0.15);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,0.25);
+      border-radius: 100px;
+      padding: 9px 18px;
+      color: #fff;
+      font-size: 14px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      transition: background 0.2s;
+    }
+    .traveler-chip:hover { background: rgba(255,255,255,0.25); }
+
+    /* Countdown */
+    .countdown-wrap {
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+    }
+    .countdown-label-top {
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.6);
+    }
+    .countdown {
+      display: inline-flex;
+      gap: 4px;
+      background: rgba(255,255,255,0.12);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 18px;
+      padding: 18px 28px;
+      align-items: center;
+    }
+    .countdown-unit { text-align: center; min-width: 56px; }
+    .countdown-number {
+      font-size: 38px;
+      font-weight: 800;
+      color: #fff;
+      line-height: 1;
+      font-variant-numeric: tabular-nums;
+    }
+    .countdown-unit-label {
+      font-size: 10px;
+      color: rgba(255,255,255,0.6);
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin-top: 4px;
+    }
+    .countdown-sep {
+      font-size: 32px;
+      font-weight: 800;
+      color: rgba(255,255,255,0.35);
+      padding: 0 2px;
+      margin-bottom: 18px;
+    }
+
+    /* ─── MAIN ─────────────────────────────────── */
+    .container {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .content {
+      margin-top: -80px;
+      padding-bottom: 80px;
+      position: relative;
+      z-index: 10;
+    }
+
+    .section-label {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--slate);
+      margin: 36px 0 12px;
+    }
+
+    /* ─── CARDS ────────────────────────────────── */
+    .card {
+      background: var(--white);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 28px;
+      border: 1px solid var(--border);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    /* ─── TIMELINE CARD ────────────────────────── */
+    .timeline-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      border: 1px solid var(--border);
+      overflow: hidden;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .timeline-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); }
+
+    .timeline-header {
+      background: linear-gradient(135deg, #1251A3 0%, #0EA5E9 100%);
+      padding: 22px 28px;
+    }
+    .timeline-header h3 {
+      font-size: 17px;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 3px;
+    }
+    .timeline-header p { font-size: 13px; color: rgba(255,255,255,0.75); }
+
+    .timeline-body { padding: 4px 28px 24px; }
+
+    .timeline-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      padding: 18px 0 0;
+      position: relative;
+    }
+    .timeline-item:not(:last-child) .timeline-left::after {
+      content: '';
+      display: block;
+      width: 2px;
+      height: calc(100% + 18px);
+      background: linear-gradient(to bottom, var(--border), transparent);
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      top: 40px;
+    }
+    .timeline-left {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+      flex-shrink: 0;
+    }
+    .timeline-dot {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 17px;
+      flex-shrink: 0;
+    }
+    .dot-orange { background: #FFF7ED; border: 2px solid #FDBA74; }
+    .dot-blue   { background: #EFF6FF; border: 2px solid #93C5FD; }
+    .dot-teal   { background: #F0FDFA; border: 2px solid #5EEAD4; }
+    .dot-green  { background: #F0FDF4; border: 2px solid #86EFAC; }
+
+    .timeline-right { padding-bottom: 4px; }
+    .timeline-time {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--teal-dark);
+      letter-spacing: 0.5px;
+      margin-bottom: 3px;
+    }
+    .timeline-right h4 { font-size: 15px; font-weight: 650; color: var(--navy); margin-bottom: 2px; }
+    .timeline-right p { font-size: 13px; color: var(--slate); line-height: 1.5; }
+
+    /* ─── CARD HEADER ──────────────────────────── */
+    .card-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 22px;
+    }
+    .card-icon {
+      width: 50px;
+      height: 50px;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      flex-shrink: 0;
+    }
+    .icon-blue   { background: #EFF6FF; }
+    .icon-coral  { background: #FFF7ED; }
+    .icon-red    { background: #FFF1F2; }
+    .card-title  { font-size: 18px; font-weight: 700; color: var(--navy); }
+    .card-sub    { font-size: 13px; color: var(--slate); margin-top: 1px; }
+    .badge {
+      margin-left: auto;
+      font-size: 12px;
+      font-weight: 600;
+      padding: 5px 12px;
+      border-radius: 100px;
+      background: #F0FDF4;
+      color: #15803D;
+      border: 1px solid #BBF7D0;
+      white-space: nowrap;
+    }
+
+    /* ─── FLIGHT ROUTE ─────────────────────────── */
+    .flight-route {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--bg);
+      border-radius: 14px;
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+    .flight-end { flex: 1; text-align: center; }
+    .flight-code {
+      font-size: 34px;
+      font-weight: 900;
+      letter-spacing: -1px;
+      color: var(--navy);
+      line-height: 1;
+    }
+    .flight-city { font-size: 11px; color: var(--slate); margin-top: 3px; }
+    .flight-time { font-size: 20px; font-weight: 700; color: var(--teal-dark); margin-top: 8px; }
+
+    .flight-mid { flex: 1; text-align: center; }
+    .flight-dur { font-size: 11px; color: var(--slate); margin-bottom: 6px; }
+    .flight-arrow-row {
+      display: flex;
+      align-items: center;
+      gap: 0;
+    }
+    .flight-bar {
+      flex: 1;
+      height: 2px;
+      background: linear-gradient(to right, var(--teal), var(--coral));
+    }
+    .flight-plane { font-size: 18px; color: var(--coral); }
+    .flight-nonstop { font-size: 11px; color: var(--slate); margin-top: 6px; }
+
+    /* ─── INFO ROWS ────────────────────────────── */
+    .info-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      padding: 11px 0;
+      border-bottom: 1px solid var(--border);
+      gap: 16px;
+    }
+    .info-row:last-child { border-bottom: none; }
+    .info-label {
+      font-size: 13px;
+      color: var(--slate);
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      flex-shrink: 0;
+    }
+    .info-value {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--navy);
+      text-align: right;
+      line-height: 1.4;
+    }
+    .info-value small { font-weight: 400; color: var(--slate); font-size: 12px; display: block; }
+
+    /* ─── BOOKING CODE ─────────────────────────── */
+    .booking-code {
+      background: var(--navy);
+      border-radius: 14px;
+      padding: 18px 22px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 20px;
+    }
+    .booking-code-label { font-size: 11px; color: rgba(255,255,255,0.5); margin-bottom: 4px; letter-spacing: 1px; text-transform: uppercase; }
+    .booking-code-value {
+      font-size: 26px;
+      font-weight: 800;
+      letter-spacing: 5px;
+      color: #FDE047;
+    }
+
+    /* ─── HIGHLIGHT BOX ────────────────────────── */
+    .highlight {
+      border-radius: 12px;
+      padding: 14px 16px;
+      margin-top: 18px;
+    }
+    .highlight p { font-size: 13px; font-weight: 500; line-height: 1.5; }
+    .highlight-teal { background: var(--teal-light); border-left: 4px solid var(--teal); }
+    .highlight-teal p { color: var(--teal-dark); }
+    .highlight-orange { background: var(--coral-light); border-left: 4px solid var(--coral); }
+    .highlight-orange p { color: #9A3412; }
+
+    /* ─── DIVIDER ──────────────────────────────── */
+    .divider { height: 1px; background: var(--border); margin: 20px 0; }
+
+    /* ─── FOOTER ───────────────────────────────── */
+    .footer {
+      text-align: center;
+      padding: 56px 24px 72px;
+      background: var(--white);
+      border-top: 1px solid var(--border);
+    }
+    .footer-icon { font-size: 52px; display: block; margin-bottom: 16px; }
+    .footer h3 {
+      font-size: 26px;
+      font-weight: 800;
+      color: var(--navy);
+      letter-spacing: -0.5px;
+      margin-bottom: 8px;
+    }
+    .footer p { font-size: 14px; color: var(--slate); }
+    .footer .crew { margin-top: 14px; display: flex; justify-content: center; gap: 8px; flex-wrap: wrap; }
+    .crew-name {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 100px;
+      padding: 5px 14px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--navy);
+    }
+
+    /* ─── RESPONSIVE ───────────────────────────── */
+    @media (max-width: 500px) {
+      .card { padding: 20px; }
+      .timeline-body { padding: 4px 20px 20px; }
+      .flight-code { font-size: 26px; }
+      .flight-time { font-size: 16px; }
+      .countdown { padding: 14px 18px; }
+      .countdown-number { font-size: 28px; }
+      .countdown-unit { min-width: 44px; }
+      .hero h1 { letter-spacing: -1.5px; }
+      .booking-code-value { font-size: 20px; letter-spacing: 4px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ══════════════════════════ HERO ══════════════════════════ -->
+<div class="hero">
+  <div class="hero-inner">
+    <span class="hero-flag">🇧🇷</span>
+    <h1>Nos vamos a<br><em>Río de Janeiro</em></h1>
+    <div class="hero-dates">29 de marzo &nbsp;—&nbsp; 3 de abril · 2026</div>
+
+    <div class="travelers">
+      <div class="traveler-chip">🏄 Sky</div>
+      <div class="traveler-chip">🌊 Pedro</div>
+      <div class="traveler-chip">🎉 Andrés</div>
+      <div class="traveler-chip">🔥 Toño</div>
+      <div class="traveler-chip">🗺️ Gompachirou</div>
+    </div>
+
+    <div class="countdown-wrap">
+      <div class="countdown-label-top">Faltan</div>
+      <div class="countdown" id="countdown">
+        <div class="countdown-unit">
+          <div class="countdown-number" id="cd-days">--</div>
+          <div class="countdown-unit-label">días</div>
+        </div>
+        <div class="countdown-sep">:</div>
+        <div class="countdown-unit">
+          <div class="countdown-number" id="cd-hours">--</div>
+          <div class="countdown-unit-label">horas</div>
+        </div>
+        <div class="countdown-sep">:</div>
+        <div class="countdown-unit">
+          <div class="countdown-number" id="cd-mins">--</div>
+          <div class="countdown-unit-label">min</div>
+        </div>
+        <div class="countdown-sep">:</div>
+        <div class="countdown-unit">
+          <div class="countdown-number" id="cd-secs">--</div>
+          <div class="countdown-unit-label">seg</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════ CONTENT ══════════════════════════ -->
+<div class="content">
+  <div class="container">
+
+    <!-- ── DÍA DEL VIAJE ────────────────────────── -->
+    <div class="section-label">📅 Día del viaje</div>
+    <div class="timeline-card">
+      <div class="timeline-header">
+        <h3>Domingo 29 de marzo, 2026</h3>
+        <p>Santiago → Río de Janeiro &nbsp;·&nbsp; ¡Arrancamos de madrugada! 🌙</p>
+      </div>
+      <div class="timeline-body">
+
+        <div class="timeline-item">
+          <div class="timeline-left">
+            <div class="timeline-dot dot-orange">🚐</div>
+          </div>
+          <div class="timeline-right">
+            <div class="timeline-time">01:00 – 01:10</div>
+            <h4>Transvip recoge en Santiago</h4>
+            <p>Eleuterio Ramírez 825, esq. San Francisco · Van Exclusiva</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-left">
+            <div class="timeline-dot dot-blue">🏛️</div>
+          </div>
+          <div class="timeline-right">
+            <div class="timeline-time">01:20</div>
+            <h4>Llegada al Aeropuerto SCL</h4>
+            <p>Aeropuerto Internacional A. Merino Benítez · Pudahuel</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-left">
+            <div class="timeline-dot dot-teal">✈️</div>
+          </div>
+          <div class="timeline-right">
+            <div class="timeline-time">04:47</div>
+            <h4>Despegue — JetSmart ZYPLXW</h4>
+            <p>Santiago (SCL) → Río de Janeiro (GIG) · Sin escalas</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-left">
+            <div class="timeline-dot dot-green">🌴</div>
+          </div>
+          <div class="timeline-right">
+            <div class="timeline-time">08:55</div>
+            <h4>¡Aterrizamos en Río! 🎊</h4>
+            <p>Aeropuerto Internacional Galeão (GIG) · Bienvenidos al verano</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-left">
+            <div class="timeline-dot dot-orange">🏠</div>
+          </div>
+          <div class="timeline-right">
+            <div class="timeline-time">15:00</div>
+            <h4>Check-in Airbnb en Copacabana</h4>
+            <p>Rua Sá Ferreira, 44 · Vista parcial al mar 🌊</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ── VUELO ─────────────────────────────────── -->
+    <div class="section-label">✈️ Vuelo</div>
+    <div class="card">
+      <div class="card-header">
+        <div class="card-icon icon-blue">✈️</div>
+        <div>
+          <div class="card-title">JetSmart</div>
+          <div class="card-sub">Vuelo directo · Sin escalas</div>
+        </div>
+        <span class="badge">Confirmado ✓</span>
+      </div>
+
+      <div class="flight-route">
+        <div class="flight-end">
+          <div class="flight-code">SCL</div>
+          <div class="flight-city">Santiago, Chile</div>
+          <div class="flight-time">04:47</div>
+        </div>
+        <div class="flight-mid">
+          <div class="flight-dur">~4h 08min</div>
+          <div class="flight-arrow-row">
+            <div class="flight-bar"></div>
+            <div class="flight-plane">✈</div>
+            <div class="flight-bar"></div>
+          </div>
+          <div class="flight-nonstop">Directo</div>
+        </div>
+        <div class="flight-end">
+          <div class="flight-code">GIG</div>
+          <div class="flight-city">Río de Janeiro, Brasil</div>
+          <div class="flight-time">08:55</div>
+        </div>
+      </div>
+
+      <div class="info-row">
+        <span class="info-label">📅 Fecha</span>
+        <span class="info-value">Domingo, 29 de marzo 2026</span>
+      </div>
+      <div class="info-row">
+        <span class="info-label">✈️ Aerolínea</span>
+        <span class="info-value">JetSmart</span>
+      </div>
+      <div class="info-row">
+        <span class="info-label">👥 Pasajeros</span>
+        <span class="info-value">Sky, Pedro, Andrés,<br>Toño, Gompachirou</span>
+      </div>
+
+      <div class="booking-code">
+        <div>
+          <div class="booking-code-label">Código de reserva</div>
+          <div class="booking-code-value">ZYPLXW</div>
+        </div>
+        <span style="font-size:30px;">🎫</span>
+      </div>
+    </div>
+
+    <!-- ── AIRBNB ─────────────────────────────────── -->
+    <div class="section-label">🏠 Alojamiento</div>
+    <div class="card">
+      <div class="card-header">
+        <div class="card-icon icon-red">🏖️</div>
+        <div>
+          <div class="card-title">Apartamento · Copacabana</div>
+          <div class="card-sub">Airbnb · Host: Thiago</div>
+        </div>
+        <span class="badge">5 noches ✓</span>
+      </div>
+
+      <div class="info-row">
+        <span class="info-label">📍 Dirección</span>
+        <span class="info-value">Rua Sá Ferreira, 44</span>
+      </div>
+      <div class="info-row">
+        <span class="info-label">🏙️ Barrio</span>
+        <span class="info-value">Copacabana, Río de Janeiro</span>
+      </div>
+      <div class="info-row">
+        <span class="info-label">🏡 Tipo</span>
+        <span class="info-value">Apto 1 cuadra de la playa<small>con vista parcial al mar</small></span>
+      </div>
+      <div class="info-row">
+        <span class="info-label">🟢 Check-in</span>
+        <span class="info-value">Dom 29 mar · 3:00 PM</span>
+      </div>
+      <div class="info-row">
+        <span class="info-label">🔴 Check-out</span>
+        <span class="info-value">Vie 3 abr · 10:00 AM</span>
+      </div>
+
+      <div class="highlight highlight-teal">
+        <p>🌊 A solo 1 cuadra de la playa de Copacabana con vista parcial al mar — ¡el plan perfecto para 5 días!</p>
+      </div>
+    </div>
+
+    <!-- ── TRASLADO ───────────────────────────────── -->
+    <div class="section-label">🚐 Traslado al aeropuerto</div>
+    <div class="card">
+      <div class="card-header">
+        <div class="card-icon icon-coral">🚐</div>
+        <div>
+          <div class="card-title">Transvip</div>
+          <div class="card-sub">Van Exclusiva · ID #25520531</div>
+        </div>
+        <span class="badge">Confirmado ✓</span>
+      </div>
+
+      <div class="info-row">
+        <span class="info-label">📅 Fecha</span>
+        <span class="info-value">Dom 29 mar 2026<small>madrugada (salida sábado en la noche)</small></span>
+      </div>
+      <div class="info-row">
+        <span class="info-label">⏰ Ventana de recogida</span>
+        <span class="info-value">01:00 – 01:10</span>
+      </div>
+      <div class="info-row">
+        <span class="info-label">📍 Punto de recogida</span>
+        <span class="info-value">Eleuterio Ramírez 825<small>esq. San Francisco, Santiago</small></span>
+      </div>
+      <div class="info-row">
+        <span class="info-label">🏛️ Destino</span>
+        <span class="info-value">Aeropuerto SCL, Pudahuel</span>
+      </div>
+      <div class="info-row">
+        <span class="info-label">🚐 Vehículo</span>
+        <span class="info-value">Van Exclusiva · 7 plazas</span>
+      </div>
+      <div class="info-row">
+        <span class="info-label">🏁 Llegada estimada</span>
+        <span class="info-value">01:20</span>
+      </div>
+      <div class="info-row">
+        <span class="info-label">⏱️ Duración</span>
+        <span class="info-value">~20 minutos</span>
+      </div>
+
+      <div class="highlight highlight-orange">
+        <p>⚠️ Estar listos con maletas <strong>antes de la 1:00 AM</strong> — la van no puede esperar. ¡No lleguen tarde!</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ══════════════════════════ FOOTER ══════════════════════════ -->
+<footer class="footer">
+  <span class="footer-icon">🌅</span>
+  <h3>¡Nos vemos en Río! 🇧🇷</h3>
+  <p>29 mar – 3 abr 2026 &nbsp;·&nbsp; Copacabana, Rio de Janeiro</p>
+  <div class="crew">
+    <span class="crew-name">🏄 Sky</span>
+    <span class="crew-name">🌊 Pedro</span>
+    <span class="crew-name">🎉 Andrés</span>
+    <span class="crew-name">🔥 Toño</span>
+    <span class="crew-name">🗺️ Gompachirou</span>
+  </div>
+</footer>
+
+<script>
+  const target = new Date('2026-03-29T04:47:00-03:00'); // SCL es UTC-3
+
+  function pad(n) { return String(n).padStart(2, '0'); }
+
+  function tick() {
+    const diff = target - new Date();
+    if (diff <= 0) {
+      document.getElementById('countdown').innerHTML =
+        '<div style="color:#fff;font-size:18px;font-weight:700;padding:4px 0">¡Ya estamos en Río! 🎊</div>';
+      return;
+    }
+    const d = Math.floor(diff / 86400000);
+    const h = Math.floor((diff % 86400000) / 3600000);
+    const m = Math.floor((diff % 3600000) / 60000);
+    const s = Math.floor((diff % 60000) / 1000);
+    document.getElementById('cd-days').textContent  = pad(d);
+    document.getElementById('cd-hours').textContent = pad(h);
+    document.getElementById('cd-mins').textContent  = pad(m);
+    document.getElementById('cd-secs').textContent  = pad(s);
+  }
+
+  tick();
+  setInterval(tick, 1000);
+</script>
+
+</body>
+</html>
